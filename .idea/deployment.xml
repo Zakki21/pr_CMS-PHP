@@ -93,6 +93,13 @@
           </mappings>
         </serverdata>
       </paths>
+      <paths name="NeoSeo-hittle.comOLD">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="NeoSeo-huntmasters">
         <serverdata>
           <mappings>

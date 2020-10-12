@@ -1,28 +1,36 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
+
 *, *:after, *:before {
 	box-sizing: border-box;
 }
 
 html, body {
-
 	font-family: 'Roboto', sans-serif;
 }
 
-.clear {
-	clear: both;
+div {
+	margin: 20px;
 }
 
-#man-people-user, #lock-locker {
-	fill: white;
-}
-
-.wrapper {
-	width: 400px;
-	margin: 0 auto;
+p {
+	margin: 5px;
 }
 
 form {
 	position: relative;
+}
+a {
+	width: 50%;
+	color:#7ace28;
+	padding: 5px 17px;
+	border: 1px solid #7ace28;
+	border-radius: 2px;
+	margin: 0 20px;
+	text-decoration: none;
+}
+a:hover {
+	color: #a7ce97;
+	border-color: #a7ce97;
+	text-decoration: underline;
 }
 form input[type="text"], form input[type="password"], form select, form textarea {
 	width: 100%;
@@ -43,16 +51,23 @@ form input[type="submit"]{
 	width: 100%;
 }
 
+.wrapper {
+	width: 400px;
+	margin: 0 auto;
+}
+.wrapper-message {
+	width: 80%;
+	margin: 0 auto;
+	word-wrap: normal;
+}
+
 .clear {
 	clear: both;
 }
 
-div {
-	margin: 20px;
-}
-
-p {
-	margin: 5px;
+.info {
+	color: #7f8084!important;
+	font-size: 0.8em!important;
 }
 
 .error {
@@ -69,16 +84,18 @@ p {
 	color: #ce111a;
 	padding: 7px 15px;
 	border-radius: 2px;
-	font-size: 1.2em;
+	font-size: 1em;
 	cursor: pointer;
-	width: 90%;
+	/*width: 90%;*/
+	line-height: 35px;
+	margin: 5px;
 }
 .success {
 	border: 1px solid #7ace28;
 	color: #7ace28;
 	padding: 7px 15px;
 	border-radius: 2px;
-	font-size: 1.2em;
+	font-size: 1em;
 	cursor: pointer;
 	width: 90%;
 }
