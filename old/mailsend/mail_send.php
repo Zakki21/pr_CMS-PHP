@@ -1,6 +1,4 @@
 <?php
-// Import PHPMailer classes into the global namespace
-// These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -23,8 +21,7 @@ try {
 	//Recipients
 	$mail->setFrom('zak.kaz21@gmail.com', 'ZVO');
 	$mail->addAddress('adminqqq@gmail.com', 'ZVO');
-
-
+	
 	//Attachments
 	$mail->addAttachment($upload_dir . basename($form_val['hidden']), $form_val['hidden']);
 
