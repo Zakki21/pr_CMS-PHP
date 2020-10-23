@@ -60,7 +60,11 @@ form input[type="submit"]{
 	margin: 0 auto;
 	word-wrap: normal;
 }
-
+.wrapper-message h1 {
+	color: #0a001f;
+	font-size: 1.4em;
+	padding: 10px 0 0 0;
+}
 .clear {
 	clear: both;
 }

@@ -1,13 +1,14 @@
 <?php
 	define('ROOTPATH', dirname(__FILE__));
 	
-	require ROOTPATH.DIRECTORY_SEPARATOR.'Lib'.DIRECTORY_SEPARATOR.'phpmailer'.DIRECTORY_SEPARATOR.'PHPMailer.php';
-	require ROOTPATH.DIRECTORY_SEPARATOR.'Lib'.DIRECTORY_SEPARATOR.'phpmailer'.DIRECTORY_SEPARATOR.'SMTP.php';
-	require ROOTPATH.DIRECTORY_SEPARATOR.'Lib'.DIRECTORY_SEPARATOR.'phpmailer'.DIRECTORY_SEPARATOR.'Exception.php';
-	require ROOTPATH.DIRECTORY_SEPARATOR.'App'.DIRECTORY_SEPARATOR.'Db.php';
-	$item_values = require ROOTPATH.DIRECTORY_SEPARATOR.'Config'.DIRECTORY_SEPARATOR.'ItemValues.php';
+	require ROOTPATH.DIRECTORY_SEPARATOR.'Vendor'.DIRECTORY_SEPARATOR.'phpmailer'.DIRECTORY_SEPARATOR.'PHPMailer.php';
+	require ROOTPATH.DIRECTORY_SEPARATOR.'Vendor'.DIRECTORY_SEPARATOR.'phpmailer'.DIRECTORY_SEPARATOR.'SMTP.php';
+	require ROOTPATH.DIRECTORY_SEPARATOR.'Vendor'.DIRECTORY_SEPARATOR.'phpmailer'.DIRECTORY_SEPARATOR.'Exception.php';
+	require ROOTPATH.DIRECTORY_SEPARATOR.'Framework'.DIRECTORY_SEPARATOR.'Db.php';
+	$form_fields = require ROOTPATH.DIRECTORY_SEPARATOR.'Config'.DIRECTORY_SEPARATOR.'FormFields.php';
+	$smtp_data = require ROOTPATH.DIRECTORY_SEPARATOR.'Config'.DIRECTORY_SEPARATOR.'Smtp.php';
 	
-	$db = new App\Db();
+	$db = new Framework\Db();
 	$all_users = $db->execute('SELECT * FROM users WHERE status=0');
 	
 	$mail = new PHPMailer\PHPMailer\PHPMailer(true);
@@ -21,14 +22,14 @@
 				$mail->Host = 'smtp.gmail.com';
 				$mail->SMTPAuth = true;
 				
-				$mail->Username = 'zak.kaz21@gmail.com';
-				$mail->Password = '1@23456S7891919';
+				$mail->Username = $smtp_data['login'];
+				$mail->Password = $smtp_data['password'];
 				$mail->SMTPSecure = '';
 				$mail->Port = 587;
 				
 				//Recipients
-				$mail->setFrom('zak.kaz21@gmail.com', 'ZVO');
-				$mail->addAddress('adminqqq@gmail.com', 'ZVO');
+				$mail->setFrom($smtp_data['from'], 'ZVO');
+				$mail->addAddress($smtp_data['to'], 'ZVO');
 				
 				//Attachments
 				$mail->addAttachment(dirname(__FILE__).'/Templates/Image/' . basename($one_user['image']), $one_user['image']);
@@ -44,13 +45,13 @@
 				
 				if ($mail->send()) {
 					$db->execute('UPDATE users SET status=1 WHERE id='.$one_user['id']);
-					echo str_replace('{id}', $one_user['id'], $item_values['success_value']['success_send_to_id']);
+					echo str_replace('{id}', $one_user['id'], $form_fields['success_value']['success_send_to_id']);
 				}
 			} catch (Exception $e) {
-				echo $item_values['error_value']['error_send'], $mail->ErrorInfo;
+				echo $form_fields['error_value']['error_send'], $mail->ErrorInfo;
 			}
 		}
 	}
 	else
-		echo $item_values['success_value']['not_users'];
+		echo $form_fields['success_value']['not_users'];
 	

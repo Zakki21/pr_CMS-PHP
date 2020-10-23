@@ -1,8 +1,10 @@
 <?php
 	namespace Models;
 	use App;
+	use \Framework\Db;
 	
-	class Users {
+	class Users extends \Framework\Db {
+		
 		public function getUsersToStatus () {
 			return App::$db->execute('SELECT * FROM users WHERE status=0');
 		}
@@ -12,10 +14,7 @@
 																		(fname,sname,age,password,notifications,color,hobbies,food,text,image)
 																   	VALUES ("'.$data['fname'].'", "'.$data['sname'].'", "'.$data['age'].'", "'.$data['password'].'", "'.$data['radio'].'", "'.$data['checkbox'].'", "'.$data['select'].'", "'.$data['selectsize'].'", "'.$data['textarea'].'", "'.$data['hidden'].'")
 																  ');
-			if ($status)
-				return true;
-			else
-				return false;
+			return $status;
 		}
 		
 		public function updateUsersStatusToId ($id) {
