@@ -2,7 +2,7 @@
 	namespace Lib;
 	use \Models\Users;
 	
-	class Form extends \Controllers\InterviewerController{
+	class Form {
 		
 		public $form_interviewer_validation = array();
 		public $form_interviewer_notifications = array();
@@ -16,12 +16,7 @@
 			$this->cookies_interviewer = new Cookies;
 		}
 		
-		public function indexAction ($form_interviewer_data) {
-			$valid_response = $this->validateFormAction($form_interviewer_data);
-			return $valid_response;
-		}
-		
-		private function validateFormAction (array $form_interviewer_data) {
+		public function validateForm (array $form_interviewer_data) {
 			foreach ($form_interviewer_data as $key_form_data=>$item_form_data) {
 				if (empty($item_form_data)) {
 					$this->error = true;
@@ -53,11 +48,11 @@
 			}
 			
 			if ($this->error===true) {
-				$this->cookies_interviewer->setCookieAction('user_form_interviewer', $form_interviewer_data, (time()+3600*24*30*365));
+				$this->cookies_interviewer->setCookie('user_form_interviewer', $form_interviewer_data, (time()+3600*24*30*365));
 				return $this->error_notifications;
 			}
 			else {
-				$save_status = $this->saveFormAction($form_interviewer_data);
+				$save_status = $this->saveForm($form_interviewer_data);
 //				return $save_status;
 				if (is_array($save_status)) {
 					//$this->cookies_interviewer->deleteCookieAction('user_form_interviewer');
@@ -72,7 +67,7 @@
 			
 		}
 		
-		private function saveFormAction (array $form_interviewer_data) {
+		public function saveForm (array $form_interviewer_data) {
 			foreach ($form_interviewer_data as $i_val=>$v_val) {
 				if ($i_val=='radio') {$v_val=$this->form_fields['radio_value'][$v_val];}
 				if ($i_val=='checkbox') {
@@ -98,7 +93,7 @@
 			return $add_user_status;
 		}
 		
-		public function uploadFormFileAction (array $form_interviewer_file) {
+		public function uploadFormFile (array $form_interviewer_file) {
 			if(move_uploaded_file($form_interviewer_file['tmp_name'], $this->config['upload_dir'] . basename($form_interviewer_file['name']))) {
 //				$form_success['file'] = $item_values['success_value']['file_upload'];
 //				$form_val['hidden']=$form_file['name'];

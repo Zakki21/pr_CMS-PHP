@@ -11,8 +11,8 @@
 		}
 		
 		public function indexAction () {
-			if(!empty($this->cookies_interviewer->getCookieAction('user_form_interviewer'))){
-				$cookies = $this->cookies_interviewer->getCookieAction('user_form_interviewer');
+			if(!empty($this->cookies_interviewer->getCookie('user_form_interviewer'))){
+				$cookies = $this->cookies_interviewer->getCookie('user_form_interviewer');
 			}
 			else
 				$cookies = '';

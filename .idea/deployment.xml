@@ -72,7 +72,21 @@
           </mappings>
         </serverdata>
       </paths>
+      <paths name="NeoSeo-boomua.com.ua">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="NeoSeo-donferma.com">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="NeoSeo-dropbaza.com.ua">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
@@ -142,6 +156,13 @@
           </mappings>
         </serverdata>
       </paths>
+      <paths name="NeoSeo-new.brutalica.ru">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="NeoSeo-new.catfishmaster.ru">
         <serverdata>
           <mappings>
@@ -157,6 +178,13 @@
         </serverdata>
       </paths>
       <paths name="NeoSeo-new.dev1.bicom.net.ua">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="NeoSeo-new.ditek.ua">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
@@ -184,7 +212,28 @@
           </mappings>
         </serverdata>
       </paths>
+      <paths name="NeoSeo-new.fishpro.com.ua">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="NeoSeo-new.g-box.com.ua">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="NeoSeo-new.grillhouse.ua">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="NeoSeo-new.hittele.com">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
@@ -199,6 +248,13 @@
         </serverdata>
       </paths>
       <paths name="NeoSeo-new.huntmasters.com.ua">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="NeoSeo-new.m-d.ua">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
@@ -303,7 +359,28 @@
           </mappings>
         </serverdata>
       </paths>
+      <paths name="NeoSeo-new.sweetmoda.by">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="NeoSeo-new.sweetmoda7.ru">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="NeoSeo-new.test.snp4.com">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="NeoSeo-new.tvdroid.ru">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
@@ -346,6 +423,13 @@
         </serverdata>
       </paths>
       <paths name="NeoSeo-test.snp4.com">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="NeoSeo-свет-казани.рф">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
@@ -437,6 +521,13 @@
         </serverdata>
       </paths>
       <paths name="beastsupplies">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="viles.webjam.com.ua">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />

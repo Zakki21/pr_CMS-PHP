@@ -1,6 +1,6 @@
 <?php
 	namespace Controllers;
-	use \Lib\Form;
+	use \Lib\FormInterviewer;
 	use \Lib\Cookies;
 	
 	class InterviewerController extends \Framework\Controller{
@@ -16,7 +16,7 @@
 		public function __construct() {
 			$this->form_interviewer_fields = require ROOTPATH.DIRECTORY_SEPARATOR.'Config'.DIRECTORY_SEPARATOR.'FormInterviewerFields.php';
 			$this->config = require ROOTPATH.DIRECTORY_SEPARATOR.'Config'.DIRECTORY_SEPARATOR.'MainConfig.php';
-			$this->form_interviewer = new Form;
+			$this->form_interviewer = new FormInterviewer;
 			$this->cookies_interviewer = new Cookies;
 		}
 		
@@ -25,8 +25,8 @@
 			if(!empty($_GET['continue'])) {
 				$continue = $_GET['continue'];
 			}
-			if (!empty($this->cookies_interviewer->getCookieAction('user_form_interviewer')) && $continue=='yes') {
-				$form_interviewer_data = unserialize($this->cookies_interviewer->getCookieAction('user_form_interviewer'));
+			if (!empty($this->cookies_interviewer->getCookie('user_form_interviewer')) && $continue=='yes') {
+				$form_interviewer_data = unserialize($this->cookies_interviewer->getCookie('user_form_interviewer'));
 			}
 			
 			if(!empty($_POST)) {
@@ -35,10 +35,10 @@
 				if (!empty($form_interviewer_file['tmp_name'])) {
 					$form_interviewer_data['hidden'] = $form_interviewer_file['name'];
 					$form_interviewer_data['file'] = $form_interviewer_file;
-					$this->form_interviewer->uploadFormFileAction($form_interviewer_file);
+					$this->form_interviewer->uploadFormFile($form_interviewer_file);
 				}
 				
-				$form_interviewer_response = $this->form_interviewer->indexAction($form_interviewer_data);
+				$form_interviewer_response = $this->form_interviewer->index($form_interviewer_data);
 				
 				ob_start();
 				var_dump($form_interviewer_response);

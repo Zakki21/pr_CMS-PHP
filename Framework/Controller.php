@@ -3,6 +3,7 @@
 	use App;
 	
 	class Controller {
+		
 		public function renderLayout ($body) {
 			ob_start();
 			require ROOTPATH.DIRECTORY_SEPARATOR.'Templates'.DIRECTORY_SEPARATOR.'Layout'.DIRECTORY_SEPARATOR."Layout.tpl";
