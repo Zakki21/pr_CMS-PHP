@@ -1,6 +1,6 @@
 <?php
 	namespace Lib;
-	use \Models\Users;
+	use \Models\UsersModel;
 	
 	class Form {
 		
@@ -53,7 +53,7 @@
 			}
 			else {
 				$save_status = $this->saveForm($form_interviewer_data);
-//				return $save_status;
+print_r($save_status);exit();
 				if (is_array($save_status)) {
 					//$this->cookies_interviewer->deleteCookieAction('user_form_interviewer');
 					return $this->error;
@@ -69,7 +69,7 @@
 		
 		public function saveForm (array $form_interviewer_data) {
 			foreach ($form_interviewer_data as $i_val=>$v_val) {
-				if ($i_val=='radio') {$v_val=$this->form_fields['radio_value'][$v_val];}
+				if ($i_val=='radio') {$v_val=$this->form_interviewer_fields['radio_value'][$v_val];}
 				if ($i_val=='checkbox') {
 					foreach ($v_val as $ch_v_val) {
 						$name_to_str .= $this->form_interviewer_fields['checkbox_value'][$ch_v_val].', ';
@@ -89,7 +89,7 @@
 				}
 				$data[$i_val] = $v_val;
 			}
-			$add_user_status = Users::addUser($data);
+			$add_user_status = UsersModel::addUser($data);
 			return $add_user_status;
 		}
 		

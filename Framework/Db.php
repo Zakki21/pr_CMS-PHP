@@ -18,7 +18,7 @@
 		}
 
 		public function execute($query) {
-			$stmt = $this->pdo->prepare($query);
+			$stmt = $this->pdo->query($query);
 			return $stmt;
 		}
 		
